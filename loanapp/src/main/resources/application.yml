@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+        name: loanapp
+  datasource:
+    url: jdbc:mysql://localhost:3306/loanapp_db
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # or 'create', 'validate', 'none'
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: loanapp-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: loan_application
+
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+jwt:
+  secret: LP4jCj23/i1qXLnJXjb700zv1EoG9bDyoN/r1C/c3Wc=
+  expirationMs: 3600000
+
