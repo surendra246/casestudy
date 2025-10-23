@@ -1,4 +1,4 @@
-package com.banking.loanapp.dto;
+package com.banking.loanapp.dto.request;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoanDecisionDTO {
+public class LoanDecision {
    private Long decisionId;
    @NotNull
    private Long customerId;
