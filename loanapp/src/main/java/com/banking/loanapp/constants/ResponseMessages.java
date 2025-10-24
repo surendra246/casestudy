@@ -51,6 +51,7 @@ public final class ResponseMessages {
     public static final String KAFKA_RECEIVED = "Received Kafka message: Application ID = {}, Status = {}, Remarks = {}";
     public static final String APPLICATION_NOT_FOUND = "Application not found for ID: {}";
     public static final String APPLICATION_SEND_KAFKA = "application has been submitted successfully";
+    public static final String APPLICATION_CONSUMES_KAFKA = "data has been Consumed successfully";
 
     // Application
     public static final String APPLICATION_UPDATED = "Application status updated to {} for ID: {}";

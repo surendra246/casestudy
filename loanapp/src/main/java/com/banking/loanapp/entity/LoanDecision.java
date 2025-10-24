@@ -13,6 +13,8 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,17 +29,22 @@ public class LoanDecision {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "decision_id")
    private Long decisionId;
+
    @OneToOne
    @JoinColumn(name = "customer_id", nullable = false)
    private Customer customer;
+
    @DecimalMin(value = "0.0")
-   @Digits(integer = 12, fraction = 2)
+   @Min(1000)
+   @Max(1000000000)
    @Column(name = "approved_amount", precision = 12, scale = 2)
    private BigDecimal approvedAmount;
+
    @DecimalMin(value = "0.0")
    @Digits(integer = 5, fraction = 2)
    @Column(name = "interest_rate", precision = 5, scale = 2)
    private BigDecimal interestRate;
+
    @Column(columnDefinition = "TEXT")
    private String remarks;
    @Column(name = "decided_at")
