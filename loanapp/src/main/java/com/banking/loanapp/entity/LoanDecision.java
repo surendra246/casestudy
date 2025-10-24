@@ -13,10 +13,11 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 
 @Entity
 @Table(name = "loan_decisions")
@@ -34,7 +35,8 @@ public class LoanDecision {
    private Customer customer;
 
    @DecimalMin(value = "0.0")
-   //@Digits(integer = 5, fraction = 2)
+   @Min(1000)
+   @Max(1000000000)
    @Column(name = "approved_amount", precision = 12, scale = 2)
    private BigDecimal approvedAmount;
 

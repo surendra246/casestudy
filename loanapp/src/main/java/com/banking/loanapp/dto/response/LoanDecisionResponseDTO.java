@@ -2,7 +2,6 @@ package com.banking.loanapp.dto.response;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
 import lombok.Data;
 
 @Data
