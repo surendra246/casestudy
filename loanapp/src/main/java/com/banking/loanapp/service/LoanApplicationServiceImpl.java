@@ -130,7 +130,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
             kafkaDTO.setApplicationId(application.getApplicationId());
             kafkaDTO.setCustomerId(customer.getCustomerId());
             kafkaDTO.setStatus(application.getStatus());
-            kafkaDTO.setMeessage(ResponseMessages.APPLICATION_SEND_KAFKA);
+            kafkaDTO.setMessage(ResponseMessages.APPLICATION_SEND_KAFKA);
             kafkaTemplate.send("loan_application", kafkaDTO);
 
             // Prepare response
@@ -160,7 +160,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
                 "FAILURE"
             );
         }
-            
+
     }
 }
 

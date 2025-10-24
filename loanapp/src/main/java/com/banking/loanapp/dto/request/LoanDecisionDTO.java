@@ -13,12 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoanDecision {
-   private Long decisionId;
-   @NotNull
+public class LoanDecisionDTO {
+   //@NotNull
    private Long customerId;
    private BigDecimal approvedAmount;
    private BigDecimal interestRate;
    private String remarks;
-   private LocalDateTime decidedAt;
 }

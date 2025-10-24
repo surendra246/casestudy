@@ -16,6 +16,7 @@ import jakarta.validation.constraints.Digits;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 
 @Entity
 @Table(name = "loan_decisions")
@@ -27,17 +28,21 @@ public class LoanDecision {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "decision_id")
    private Long decisionId;
+
    @OneToOne
    @JoinColumn(name = "customer_id", nullable = false)
    private Customer customer;
+
    @DecimalMin(value = "0.0")
-   @Digits(integer = 12, fraction = 2)
+   //@Digits(integer = 5, fraction = 2)
    @Column(name = "approved_amount", precision = 12, scale = 2)
    private BigDecimal approvedAmount;
+
    @DecimalMin(value = "0.0")
    @Digits(integer = 5, fraction = 2)
    @Column(name = "interest_rate", precision = 5, scale = 2)
    private BigDecimal interestRate;
+
    @Column(columnDefinition = "TEXT")
    private String remarks;
    @Column(name = "decided_at")
