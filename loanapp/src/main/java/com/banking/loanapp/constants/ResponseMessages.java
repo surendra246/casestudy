@@ -6,12 +6,13 @@ public final class ResponseMessages {
 
 
     // Success messages
-    public static final String APPLICATION_SUBMITTED = "Application submitted successfully";
+    public static final String APPLICATION_SUBMITTED = "Loan application submitted successfully";
     public static final String CUSTOMER_CREATED = "Customer created successfully";
 
     // Duplicate messages
     public static final String DUPLICATE_EMAIL = "Email already exists";
     public static final String DUPLICATE_PHONE = "Phone number already exists";
+    
 
      // Logging
     public static final String CHECKING_EMAIL = "Checking for existing customer with email: {}";
@@ -49,6 +50,7 @@ public final class ResponseMessages {
     // Kafka
     public static final String KAFKA_RECEIVED = "Received Kafka message: Application ID = {}, Status = {}, Remarks = {}";
     public static final String APPLICATION_NOT_FOUND = "Application not found for ID: {}";
+    public static final String APPLICATION_SEND_KAFKA = "application has been submitted successfully";
 
     // Application
     public static final String APPLICATION_UPDATED = "Application status updated to {} for ID: {}";
@@ -56,4 +58,8 @@ public final class ResponseMessages {
     public static final String CARD_NOT_ISSUED = "Credit card not issued for {}: Salary below threshold.";
 
     public static final BigDecimal FIXED_CREDIT_LIMIT = BigDecimal.valueOf(250000);
+    
+
+    public static final String LOAN_APPLICATION_FAILED_DUE_DATA = "Loan application failed due to data issue";
+    public static final String LOAN_APPLICATION_FAILED_DUE_KAFKA_DISPATCH  = "Loan application failed during Kafka dispatch";
 }

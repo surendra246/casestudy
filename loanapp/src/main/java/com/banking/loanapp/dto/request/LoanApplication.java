@@ -1,4 +1,4 @@
-package com.banking.loanapp.dto;
+package com.banking.loanapp.dto.request;
 
 import java.time.LocalDateTime;
 
@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoanApplicationDTO {
+public class LoanApplication {
    private Long applicationId;
    @NotNull
    private Long customerId;
-   private String status; // APPROVED / REJECTED / PENDING / SENT_TO_KAFKA
+   private String status;
    private String kafkaOffset;
    private LocalDateTime createdAt;
 }

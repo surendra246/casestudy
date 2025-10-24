@@ -1,10 +1,9 @@
-package com.banking.loanapp.dto;
+package com.banking.loanapp.dto.request;
 
 import java.math.BigDecimal;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,14 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PropertyDetailsDTO {
-   private Long propertyId;
-   @NotNull
+public class EmploymentDetailsDTO {
+   private Long employmentId;
    private Long customerId;
    @NotBlank
-   private String propertyType;
+   private String employerName;
    @NotBlank
-   private String address;
+   private String jobTitle;
    @DecimalMin(value = "0.0", inclusive = false)
-   private BigDecimal marketValue;
+   private BigDecimal annualIncome;
 }
