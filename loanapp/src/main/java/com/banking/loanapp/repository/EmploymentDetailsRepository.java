@@ -1,7 +1,6 @@
 package com.banking.loanapp.repository;
 
 import com.banking.loanapp.entity.Customer;
-import com.banking.loanapp.entity.PropertyDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

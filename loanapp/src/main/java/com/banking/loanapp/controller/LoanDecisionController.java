@@ -4,7 +4,6 @@ import com.banking.loanapp.dto.request.LoanDecisionDTO;
 import com.banking.loanapp.dto.response.GenericResponse;
 import com.banking.loanapp.dto.response.LoanApplicationResponseDTO;
 import com.banking.loanapp.service.LoanApplicationConsumer;
-import com.banking.loanapp.service.LoanApplicationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class LoanDecisionController {
     private LoanApplicationConsumer loanApplicationConsumer;
 
     @PostMapping("/decision")
-    public ResponseEntity<GenericResponse<LoanApplicationResponseDTO>> applyLoan( @RequestBody LoanDecisionDTO requestDTO
+    public ResponseEntity<GenericResponse<LoanApplicationResponseDTO>> applyLoan(@Valid @RequestBody LoanDecisionDTO requestDTO
     ) {
         GenericResponse<LoanApplicationResponseDTO> response = loanApplicationConsumer.makeDecision(requestDTO);
         return ResponseEntity.ok(response);

@@ -1,7 +1,6 @@
 package com.banking.loanapp.service;
 
 import com.banking.loanapp.constants.ErrorCodes;
-import com.banking.loanapp.constants.ErrorMessages;
 import com.banking.loanapp.constants.ResponseMessages;
 import com.banking.loanapp.dto.request.LoanDecisionDTO;
 import com.banking.loanapp.dto.response.GenericResponse;
@@ -17,7 +16,6 @@ import com.banking.loanapp.repository.EmploymentDetailsRepository;
 import com.banking.loanapp.repository.PropertyDetailsRepository;
 import com.banking.loanapp.repository.LoanApplicationRepository;
 import com.banking.loanapp.repository.LoanDecisionRepository;
-import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
