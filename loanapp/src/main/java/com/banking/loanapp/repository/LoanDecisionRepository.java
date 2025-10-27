@@ -2,6 +2,7 @@ package com.banking.loanapp.repository;
 
 import com.banking.loanapp.entity.LoanDecision;
 import org.springframework.data.jpa.repository.JpaRepository;
+import com.banking.loanapp.entity.LoanDecision;
 
 import java.util.Optional;
 
