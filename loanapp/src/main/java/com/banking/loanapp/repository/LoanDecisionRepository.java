@@ -1,10 +1,7 @@
 package com.banking.loanapp.repository;
 
-import com.banking.loanapp.entity.LoanDecision;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
+import com.banking.loanapp.entity.LoanDecision;
 
 public interface LoanDecisionRepository extends JpaRepository<LoanDecision, Long> {
-    Optional<LoanDecision> findTopByCustomerCustomerId(Long customerId);
 }
